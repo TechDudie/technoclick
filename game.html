@@ -5,11 +5,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
 <style>
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 button {
   background-color: #ffdd00;
   border: none;
   color: black;
   padding: 15px 32px;
+  width: 100%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -19,11 +30,23 @@ button {
   border-radius: 8px;
   font-family: 'Roboto Mono', monospace;
 }
+
+button:hover {
+  background-color: #efd000;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #4488ff;
+  padding: 20px;
+}
 </style>
 </head>
 <body>
+<div>
 <input id="name" placeholder="Name" size="20">
 <button id="start" onclick="start();">Play</a>
+</div>
 <script>
 function start() {
   var name = document.getElementById("name").value;
