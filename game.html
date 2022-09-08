@@ -68,7 +68,7 @@ function start() {
     localStorage.setItem("name", name);
   }
   document.getElementById("menu").innerHTML += "<iframe src=\"song.mp3\" allow=\"autoplay\" style=\"display:none\">";
-  
+  document.getElementById("menu").style.display = "none"; // hide the start menu
   // start the game
 }
 </script>
