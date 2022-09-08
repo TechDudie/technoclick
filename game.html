@@ -60,11 +60,8 @@ div {
 <input id="name" placeholder="Name" size="20">
 <button id="start" onclick="start();">Play</a>
 </div>
-<audio autoplay>
-<source id="audio" src="song.mp3" type="audio/mpeg">
-</audio>
+<iframe src="song.mp3" allow="autoplay" style="display:none">
 <script>
-document.getElementById('audio').play();
 function start() {
   var name = document.getElementById("name").value;
   if (name != "") {
