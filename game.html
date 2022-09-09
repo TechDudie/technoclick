@@ -43,7 +43,7 @@ button:hover {
   background-color: #efd000;
 }
 
-div {
+#menu {
   border-radius: 5px;
   background-color: #4488ff;
   padding: 20px;
@@ -54,21 +54,35 @@ div {
   transform: translate(-50%, -50%);
 }
 
+.section {
+  border-radius: 5px;
+  border: 10px rgba(0, 0, 0, 0) solid;
+  background-color: #4488ff;
+  padding: 20px;
+  width: 25%;
+  position: absolute;
+  top: 0%;
+  transform: translate(-50%, -50%);
+}
 </style>
 </head>
 <body>
+<!-- start menu !-->
 <div id="menu">
 <input id="name" placeholder="Name" size="20">
 <button id="start" onclick="start();">Play</a>
+</div>
+<!-- game menus !-->
+<div class="section">
 </div>
 <script>
 function start() {
   var name = document.getElementById("name").value;
   if (name != "") {
     localStorage.setItem("name", name);
+    document.getElementById("menu").innerHTML += "<iframe src=\"song.mp3\" allow=\"autoplay\" style=\"display:none\">";
+    document.getElementById("menu").style.display = "none"; // hide the start menu
   }
-  document.getElementById("menu").innerHTML += "<iframe src=\"song.mp3\" allow=\"autoplay\" style=\"display:none\">";
-  document.getElementById("menu").style.display = "none"; // hide the start menu
   // start the game
 }
 </script>
