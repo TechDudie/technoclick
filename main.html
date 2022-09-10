@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>TechnoClick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body {
+  background-image: url('background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  position: relative;
+}
+
+h1, h2, h3, p, a {
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+}
+
+button {
+  background-color: #ffdd00;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+button:hover {
+  background-color: #efd000;
+}
+
+.section {
+  border-radius: 5px;
+  border: 10px rgba(0, 0, 0, 0) solid;
+  background-color: #4488ff;
+  padding: 20px;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  transform: translate(-50%, -50%);
+}
+#section_a { width: 10%; left: 10%; }
+#section_b { width: 60%; left: 60%; }
+#section_c { width: 15%; left: 15%; }
+#section_d { width: 15%; left: 15%; }
+</style>
+</head>
+<body>
+<!-- game menus !-->
+<div class="section" id="section_a">
+<h1 id="transistors">Transistors ⚡: </h1>
+<h1 id="resistors">Resistors ⚡: </h1>
+<h1 id="money">Money 💵: </h1>
+<button onclick="transistor();">Transistor</button>
+<button onclick="resistor();">Resistor</button>
+</div>
+<div class="section" id="section_b"></div>
+<div class="section" id="section_c"></div>
+<div class="section" id="section_d"></div>
+<!-- javascript !-->
+<script>
+// Variable initilization
+var transistor = localStorage.getItem("transistor");
+var resistor = localStorage.getItem("resistor");
+var money = localStorage.getItem("money");
+
+transistor = transistor === null ? 0 : transistor;
+resistor = resistor === null ? 0 : resistor;
+money = money === null ? 0 : money;
+
+// Function initilization
+function transistor() {
+  transistor++;
+}
+function resistor() {
+  resistor++;
+}
+function cash(dollars) {
+  money = money + dollars;
+}
+function update() {
+  document.getElementById("transistor").innerHTML = "Transistors ⚡: " + transistor.toString();
+  document.getElementById("resistor").innerHTML = "Resistors ⚡: " + resistor.toString();
+  document.getElementById("money").innerHTML = "Money 💵: " + money.toString();
+
+}
+function save() {
+  localStorage.setItem("transistor", transistor);
+  localStorage.setItem("resistor", resistor);
+  localStorage.setItem("money", money);
+}
+
+setInterval(update, 1000);
+setInterval(save, 30000);
+</script>
+</body>
+</html>
