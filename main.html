@@ -88,9 +88,9 @@ function cash(dollars) {
   money = money + dollars;
 }
 function update() {
-  document.getElementById("transistor").innerHTML = "Transistors ⚡: " + transistor.toString();
-  document.getElementById("resistor").innerHTML = "Resistors ⚡: " + resistor.toString();
-  document.getElementById("money").innerHTML = "Money 💵: " + money.toString();
+  document.getElementById("transistor").value = "Transistors ⚡: " + transistor.toString();
+  document.getElementById("resistor").value = "Resistors ⚡: " + resistor.toString();
+  document.getElementById("money").value = "Money 💵: " + money.toString();
 
 }
 function save() {
